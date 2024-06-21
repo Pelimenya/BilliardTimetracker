@@ -20,7 +20,7 @@ namespace BilliardTimeTracker.MainPages
         private void StartTimer()
         {
             _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromSeconds(1); // Интервал обновления в 1 секунду
+            _timer.Interval = TimeSpan.FromSeconds(10);
             _timer.Tick += (sender, args) => LoadData();
             _timer.Start();
         }
@@ -29,9 +29,10 @@ namespace BilliardTimeTracker.MainPages
         {
             using (var context = new ContextDB())
             {
-                // Получение текущей игровой сессии пользователя
+             
                 var currentUserId = UserSession.Instance.UserId;
                 var currentTime = DateTime.Now;
+                
                 var currentSession = context.Sessions
                     .Where(s => s.UserId == currentUserId && s.StartTime <= currentTime && (s.EndTime == null || s.EndTime >= currentTime))
                     .OrderByDescending(s => s.StartTime)
@@ -46,11 +47,10 @@ namespace BilliardTimeTracker.MainPages
                         .Join(context.Rates, tr => tr.RateId, r => r.RateId, (tr, r) => r.RatePerHour)
                         .FirstOrDefault();
                     var cost = (decimal)duration.TotalHours * ratePerHour;
-
-                    // Заполнение данных текущей игровой сессии
+                    
                     var currentSessionText = $"Стол: {table?.TableName}\n" +
                                              $"Время начала: {currentSession.StartTime}\n" +
-                                             $"Длительность: {duration.Hours} час(ов) {duration.Minutes} минут(ы)\n" +
+                                             $"Длительность: {ConvertToHoursAndMinutes((decimal)duration.TotalMinutes)}\n" +
                                              $"Стоимость: {cost:F2} ₽";
                     CurrentSessionText.Text = currentSessionText;
                 }
@@ -58,8 +58,7 @@ namespace BilliardTimeTracker.MainPages
                 {
                     CurrentSessionText.Text = "Нет активной сессии";
                 }
-
-                // Получение последних игр пользователя
+                
                 var recentGames = context.Sessions
                     .Where(s => s.UserId == currentUserId && s.EndTime != null)
                     .OrderByDescending(s => s.StartTime)
@@ -68,13 +67,20 @@ namespace BilliardTimeTracker.MainPages
                     {
                         TableName = s.Table.TableName,
                         s.StartTime,
-                        Duration = (s.EndTime - s.StartTime).Value.TotalMinutes,
+                        Duration = ConvertToHoursAndMinutes((decimal)(s.EndTime - s.StartTime).Value.TotalMinutes),
                         s.Cost
                     })
                     .ToList();
 
                 RecentGamesList.ItemsSource = recentGames;
             }
+        }
+
+        private static string ConvertToHoursAndMinutes(decimal decimalMinutes)
+        {
+            int hours = (int)(decimalMinutes / 60);
+            int minutes = (int)(decimalMinutes % 60);
+            return $"{hours} ч. {minutes} мин.";
         }
     }
 }

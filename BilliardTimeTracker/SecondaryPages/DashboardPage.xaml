@@ -37,9 +37,9 @@
                                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White"/>
                                 </DataGrid.Resources>
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Стол" Binding="{Binding TableName}" Width="*"/>
+                                    <DataGridTextColumn Header="Стол" Binding="{Binding TableName}" Width="auto"/>
                                     <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime}" Width="*"/>
-                                    <DataGridTextColumn Header="Длительность" Binding="{Binding Duration}" Width="*"/>
+                                    <DataGridTextColumn Header="Длительность" Binding="{Binding Duration}" Width="auto"/>
                                     <DataGridTextColumn Header="Стоимость" Binding="{Binding Cost}" Width="*"/>
                                 </DataGrid.Columns>
                             </DataGrid>
