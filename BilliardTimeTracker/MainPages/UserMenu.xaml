@@ -4,9 +4,70 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:BilliardTimeTracker.MainPages"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
       mc:Ignorable="d"
-      Title="UserMenu" Height="450" Width="800">
+      Title="UserMenu" >
     <Grid>
-        
+        <mah:HamburgerMenu x:Name="TableMenu"
+                           VerticalAlignment="Stretch" 
+                           DisplayMode="CompactInline"
+                           IsPaneOpen="True"
+                           PaneBackground="#389238"
+                           PaneForeground="#FF444444"  
+                           OptionsItemTemplate="{StaticResource TableMenuItemTemplate}"
+                           ItemTemplate="{StaticResource TableMenuItemTemplate}"
+                           ItemClick="HamburgerMenuControl_OnItemClick"
+                           OptionsItemClick="HamburgerMenuControl_OnItemClick"
+                           SelectedIndex="0">
+            <mah:HamburgerMenu.ItemsSource>
+                <mah:HamburgerMenuItemCollection>
+                    <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\Grid.png" Label="Панель управления">
+                        <mah:HamburgerMenuItem.Tag>
+                            <Frame x:Name="SalesPlanPage" Source="../SecondaryPages/DashboardPage.xaml" NavigationUIVisibility="Hidden" />
+                        </mah:HamburgerMenuItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
+                    
+                    <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\Exit.png" Label="Выйти из аккаунта" >
+                        <mah:HamburgerMenuItem.Tag>
+                            <Frame x:Name="LoginPage" Source=".\LoginPage.xaml" NavigationUIVisibility="Hidden" />
+                        </mah:HamburgerMenuItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
+                </mah:HamburgerMenuItemCollection>
+            </mah:HamburgerMenu.ItemsSource>
+
+            <mah:HamburgerMenu.OptionsItemsSource>
+                <mah:HamburgerMenuItemCollection>
+                    <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\Information.png" Label="О программе" >
+                        <mah:HamburgerMenuItem.Tag>
+                            <Frame x:Name="AboutPage" Source=".\AboutPage.xaml" NavigationUIVisibility="Hidden" />
+                        </mah:HamburgerMenuItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
+                </mah:HamburgerMenuItemCollection>
+            </mah:HamburgerMenu.OptionsItemsSource>
+
+            <mah:HamburgerMenu.ContentTemplate>
+                <DataTemplate DataType="{x:Type mah:HamburgerMenuItem}">
+                    <Grid x:Name="TheContentGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Background="#389238">
+                            <TextBlock x:Name="Header"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="24"
+                                       Foreground="#FF444444"
+                                       Text="{Binding Label}" />
+                        </Border>
+                        <ContentControl x:Name="TheContent"
+                                        Grid.Row="1"
+                                        Focusable="False"
+                                        Content="{Binding Tag}">
+                        </ContentControl>
+                    </Grid>
+                </DataTemplate>
+            </mah:HamburgerMenu.ContentTemplate>
+        </mah:HamburgerMenu>
     </Grid>
 </Page>

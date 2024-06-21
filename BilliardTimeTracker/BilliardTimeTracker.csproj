@@ -22,4 +22,15 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Assets\Images\grid.png" />
+      <Content Include="Assets\Images\Grid.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Images\Information.png" />
+      <Content Include="Assets\Images\Information.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

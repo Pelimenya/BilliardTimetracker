@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\App.xaml
-4-266949360
-
-12106484653
+6-505630277
+2-1546700160
+14671588203
 2151335674944
-Assets\SplitMenuStyles.xaml;MainPages\LoginPage.xaml;MainPages\UserMenu.xaml;MainWindow.xaml;
+Assets\SplitMenuStyles.xaml;MainPages\AboutPage.xaml;MainPages\LoginPage.xaml;MainPages\UserMenu.xaml;MainWindow.xaml;SecondaryPages\DashboardPage.xaml;
 
 False
 

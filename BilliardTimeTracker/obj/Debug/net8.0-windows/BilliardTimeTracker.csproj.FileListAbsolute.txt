@@ -111,3 +111,11 @@ F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainP
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\LoginPage.baml
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\UserMenu.g.cs
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\UserMenu.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\BilliardTimeTracker.sourcelink.json
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\Grid.png
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\DashboardPage.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\BilliardTimeTracker_Content.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\DashboardPage.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\AboutPage.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\AboutPage.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\Information.png
