@@ -1,25 +1,36 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using BilliardTimeTracker.Context;
+using BilliardTimeTracker.LogicAndPartialModels;
 using BilliardTimeTracker.Models;
 
 namespace BilliardTimeTracker.MainPages
 {
     public partial class DashboardPage : Page
     {
+        private DispatcherTimer _timer;
         public DashboardPage()
         {
             InitializeComponent();
-            LoadData();
+            StartTimer();
         }
 
+        private void StartTimer()
+        {
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1); // Интервал обновления в 1 секунду
+            _timer.Tick += (sender, args) => LoadData();
+            _timer.Start();
+        }
+        
         private void LoadData()
         {
             using (var context = new ContextDB())
             {
                 // Получение текущей игровой сессии пользователя
-                var currentUserId = 1; // Здесь можно использовать ID текущего авторизованного пользователя
+                var currentUserId = UserSession.Instance.UserId;
                 var currentTime = DateTime.Now;
                 var currentSession = context.Sessions
                     .Where(s => s.UserId == currentUserId && s.StartTime <= currentTime && (s.EndTime == null || s.EndTime >= currentTime))

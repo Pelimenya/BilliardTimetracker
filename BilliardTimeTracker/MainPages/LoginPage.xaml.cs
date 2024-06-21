@@ -3,6 +3,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using BilliardTimeTracker.Context;
+using BilliardTimeTracker.LogicAndPartialModels;
 
 namespace BilliardTimeTracker.MainPages;
 
@@ -24,23 +25,26 @@ public partial class LoginPage : Page
 
         using (var context = new ContextDB())
         {
-        var user = context.Users.FirstOrDefault(x => x.Username == enteredLogin);
-        if (user != null && user.PasswordHash == hashedPassword)
-        {
-            if (user.Role == "Admin")
+            var user = context.Users.FirstOrDefault(x => x.Username == enteredLogin);
+            if (user != null && user.PasswordHash == hashedPassword)
             {
-                MessageBox.Show("Admin menu");
-                // NavigationService.Navigate(new SelectUserInterface());
+                // Сохранение информации о текущем пользователе
+                UserSession.Instance.SetUser(user.UserId, user.Username, user.Role);
+
+                if (user.Role == "Admin")
+                {
+                    MessageBox.Show("Admin menu");
+                    // NavigationService.Navigate(new SelectUserInterface());
+                }
+                else
+                {
+                    NavigationService.Navigate(new UserMenu());
+                }
             }
             else
             {
-                NavigationService.Navigate(new UserMenu());
+                MessageBox.Show("Неверный логин или пароль");
             }
-        }
-        else
-        {
-            MessageBox.Show("Неверный логин или пароль");
-        }
         }
     }
 }
