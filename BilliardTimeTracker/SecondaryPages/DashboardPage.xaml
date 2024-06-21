@@ -10,8 +10,6 @@
     <Grid Background="{DynamicResource MahApps.Brushes.Accent2}">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20">
-                <TextBlock Text="Панель управления" FontSize="32" FontWeight="Bold" Foreground="{DynamicResource MahApps.Brushes.Accent}" HorizontalAlignment="Center" Margin="0,20"/>
-
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -28,44 +26,23 @@
                     <Border Grid.Column="1" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9">
                         <StackPanel>
                             <TextBlock Text="Последние игры" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,0,0,10"/>
-                            <ListView x:Name="RecentGamesList" Width="Auto">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Header="Стол" DisplayMemberBinding="{Binding TableName}" Width="100">
-                                            <GridViewColumn.HeaderContainerStyle>
-                                                <Style TargetType="GridViewColumnHeader">
-                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Accent3}"/>
-                                                </Style>
-                                            </GridViewColumn.HeaderContainerStyle>
-                                        </GridViewColumn>
-                                        <GridViewColumn Header="Время начала" DisplayMemberBinding="{Binding StartTime}" Width="150">
-                                            <GridViewColumn.HeaderContainerStyle>
-                                                <Style TargetType="GridViewColumnHeader">
-                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Accent3}"/>
-                                                </Style>
-                                            </GridViewColumn.HeaderContainerStyle>
-                                        </GridViewColumn>
-                                        <GridViewColumn Header="Длительность" DisplayMemberBinding="{Binding Duration}" Width="100">
-                                            <GridViewColumn.HeaderContainerStyle>
-                                                <Style TargetType="GridViewColumnHeader">
-                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Accent3}"/>
-                                                </Style>
-                                            </GridViewColumn.HeaderContainerStyle>
-                                        </GridViewColumn>
-                                        <GridViewColumn Header="Стоимость" DisplayMemberBinding="{Binding Cost}" Width="100">
-                                            <GridViewColumn.HeaderContainerStyle>
-                                                <Style TargetType="GridViewColumnHeader">
-                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Accent3}"/>
-                                                </Style>
-                                            </GridViewColumn.HeaderContainerStyle>
-                                        </GridViewColumn>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
+                            <DataGrid x:Name="RecentGamesList" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
+                                      HeadersVisibility="Column" GridLinesVisibility="None"
+                                      SelectionMode="Single" SelectionUnit="FullRow"
+                                      Background="Transparent"
+                                      Style="{StaticResource MahApps.Styles.DataGrid}">
+                                <DataGrid.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White"/>
+                                </DataGrid.Resources>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Стол" Binding="{Binding TableName}" Width="*"/>
+                                    <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime}" Width="*"/>
+                                    <DataGridTextColumn Header="Длительность" Binding="{Binding Duration}" Width="*"/>
+                                    <DataGridTextColumn Header="Стоимость" Binding="{Binding Cost}" Width="*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
                         </StackPanel>
                     </Border>
                 </Grid>

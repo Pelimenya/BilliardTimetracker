@@ -57,7 +57,7 @@
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
                                        FontSize="24"
-                                       Foreground="#FF444444"
+                                       Foreground="White"
                                        Text="{Binding Label}" />
                         </Border>
                         <ContentControl x:Name="TheContent"
