@@ -9,5 +9,7 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/grid.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/information.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/profile.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/exit.png")]
 
 

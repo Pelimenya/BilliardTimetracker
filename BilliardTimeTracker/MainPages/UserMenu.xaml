@@ -26,6 +26,11 @@
                             <Frame x:Name="SalesPlanPage" Source="../SecondaryPages/DashboardPage.xaml" NavigationUIVisibility="Hidden" />
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuGlyphItem>
+                    <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\Profile.png" Label="Изменить профиль">
+                        <mah:HamburgerMenuItem.Tag>
+                            <Frame x:Name="ProfilePage" Source="../SecondaryPages/ProfilePage.xaml" NavigationUIVisibility="Hidden" />
+                        </mah:HamburgerMenuItem.Tag>
+                    </mah:HamburgerMenuGlyphItem>
                     
                     <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\Exit.png" Label="Выйти из аккаунта" >
                         <mah:HamburgerMenuItem.Tag>

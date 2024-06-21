@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="EntityFramework" Version="6.5.1" />
       <PackageReference Include="MahApps.Metro" Version="2.4.10" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
@@ -29,6 +30,14 @@
       </Content>
       <None Remove="Assets\Images\Information.png" />
       <Content Include="Assets\Images\Information.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Images\user.png" />
+      <Content Include="Assets\Images\Profile.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Images\Exit.png" />
+      <Content Include="Assets\Images\Exit.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

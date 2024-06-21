@@ -6,7 +6,26 @@
       xmlns:local="clr-namespace:BilliardTimeTracker.MainPages"
       mc:Ignorable="d"
       Title="AboutPage" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="{DynamicResource MahApps.Brushes.Accent2}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20" HorizontalAlignment="Center">
+
+                <TextBlock Text="Программа 'Billiard Time Tracker'" FontSize="20" FontWeight="SemiBold" Foreground="White" Margin="10,20,10,10" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock Text="Программа предназначена для отслеживания времени игр в бильярд, ведения учета игр и генерации отчетов." FontSize="16" Foreground="White" Margin="10,0,10,20" TextWrapping="Wrap" TextAlignment="Center"/>
+                
+                <TextBlock Text="Функции программы включают:" FontSize="18" FontWeight="SemiBold" Foreground="White" Margin="10,10,10,10" TextWrapping="Wrap" TextAlignment="Left"/>
+                <TextBlock Text="• Отслеживание времени текущей сессии." FontSize="16" Foreground="White" Margin="10,0,10,5" TextWrapping="Wrap" TextAlignment="Left"/>
+                <TextBlock Text="• Ведение истории игр." FontSize="16" Foreground="White" Margin="10,0,10,5" TextWrapping="Wrap" TextAlignment="Left"/>
+                <TextBlock Text="• Управление профилями пользователей." FontSize="16" Foreground="White" Margin="10,0,10,5" TextWrapping="Wrap" TextAlignment="Left"/>
+
+                <TextBlock Text="Меню администратора включает следующие функции:" FontSize="18" FontWeight="SemiBold" Foreground="White" Margin="20,10,10,10" TextWrapping="Wrap" TextAlignment="Left"/>
+                <TextBlock Text="• Управление пользователями и их профилями." FontSize="16" Foreground="White" Margin="10,0,10,5" TextWrapping="Wrap" TextAlignment="Left"/>
+                <TextBlock Text="• Настройка тарифов и цен на игры." FontSize="16" Foreground="White" Margin="10,0,10,5" TextWrapping="Wrap" TextAlignment="Left"/>
+                <TextBlock Text="• Просмотр и редактирование истории игр." FontSize="16" Foreground="White" Margin="10,0,10,5" TextWrapping="Wrap" TextAlignment="Left"/>
+
+                <TextBlock Text="Разработал: Рыжанов Данил" FontSize="18" FontWeight="Bold" Foreground="White" Margin="30,20,10,0" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock Text="Группа ИСП-8, Ступинский техникум имени А.Т. Туманова" FontSize="16" Foreground="White" Margin="10,0,10,20" TextWrapping="Wrap" TextAlignment="Center"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
