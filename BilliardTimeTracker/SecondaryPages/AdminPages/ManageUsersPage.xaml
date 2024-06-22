@@ -2,44 +2,75 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
       Title="ManageUsersPage">
-
-    <Grid>
-        <StackPanel Margin="10">
-            <TextBlock Text="Управление пользователями" FontSize="24" FontWeight="Bold" Margin="0 0 0 10"/>
-            
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 0 10">
-                <TextBox x:Name="SearchTextBox" Width="200"  mah:TextBoxHelper.Watermark="Поиск..." Margin="0 0 10 0"/>
-                <Button Content="Поиск" Width="100" Click="SearchButton_Click"/>
+    <Grid Background="{DynamicResource MahApps.Brushes.Accent2}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <TextBlock Text="Управление пользователями" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0 0 20 0"/>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Border Grid.Column="0" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9">
+                        <StackPanel>
+                            <TextBlock Text="Добавить нового пользователя" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0 0 10 0"/>
+                            <StackPanel Orientation="Vertical" Margin="0 0 0 10">
+                                <TextBox x:Name="NewUsernameTextBox" Width="200" Margin="0 20 10 0" mah:TextBoxHelper.Watermark="Имя пользователя"/>
+                                <TextBox x:Name="NewFullNameTextBox" Width="200" Margin="0 10 10 0" mah:TextBoxHelper.Watermark="Полное имя"/>
+                                <TextBox x:Name="NewRoleTextBox" Width="200" Margin="0 10 10 0" mah:TextBoxHelper.Watermark="Роль"/>
+                                <PasswordBox x:Name="NewPasswordBox" Width="200" Margin="0 10 10 0" mah:TextBoxHelper.Watermark="Пароль"/>
+                                <Button Content="Добавить пользователя" Width="150" Margin="0 20 10 0" Click="AddUserButton_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Border Grid.Column="1" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9">
+                        <StackPanel>
+                            <TextBlock Text="Список пользователей" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0 0 10 0"/>
+                            
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 0 10">
+                                <TextBox x:Name="SearchTextBox" Width="200" mah:TextBoxHelper.Watermark="Поиск..." Margin="0 0 10 0"/>
+                                <Button Content="Поиск" Width="100" Click="SearchButton_Click"/>
+                            </StackPanel>
+                            
+                            <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0 10 0 10"
+                                      HeadersVisibility="Column" GridLinesVisibility="None"
+                                      SelectionMode="Single" SelectionUnit="FullRow"
+                                      Background="Transparent"
+                                      Style="{StaticResource MahApps.Styles.DataGrid}">
+                                <DataGrid.Resources>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White"/>
+                                </DataGrid.Resources>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" Binding="{Binding UserId}" IsReadOnly="True"/>
+                                    <DataGridTextColumn Header="Имя пользователя" Binding="{Binding Username}"/>
+                                    <DataGridTextColumn Header="Полное имя" Binding="{Binding FullName}"/>
+                                    <DataGridTextColumn Header="Роль" Binding="{Binding Role}"/>
+                                    <DataGridTextColumn Header="Пароль" Binding="{Binding PasswordHash}" Visibility="Collapsed"/> <!-- Скрываем хэш пароля -->
+                                    <DataGridTemplateColumn Header="Действия">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Button Content="Сохранить" Margin="5" Click="SaveUser_Click"/>
+                                                    <Button Content="Удалить" Margin="5" Click="DeleteUser_Click"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
             </StackPanel>
-            
-            <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0 0 0 10">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding UserId}" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="Имя пользователя" Binding="{Binding Username}"/>
-                    <DataGridTextColumn Header="Полное имя" Binding="{Binding FullName}"/>
-                    <DataGridTextColumn Header="Роль" Binding="{Binding Role}"/>
-                    <DataGridTextColumn Header="Пароль" Binding="{Binding PasswordHash}" Visibility="Collapsed"/> <!-- Скрываем хэш пароля -->
-                    <DataGridTemplateColumn Header="Действия">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Button Content="Сохранить" Margin="5" Click="SaveUser_Click"/>
-                                    <Button Content="Удалить" Margin="5" Click="DeleteUser_Click"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-            
-            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                <TextBox x:Name="NewUsernameTextBox" Width="200" Margin="0 0 10 0" mah:TextBoxHelper.Watermark="Имя пользователя"/>
-                <TextBox x:Name="NewFullNameTextBox" Width="200" Margin="0 0 10 0" mah:TextBoxHelper.Watermark="Полное имя"/>
-                <TextBox x:Name="NewRoleTextBox" Width="200" Margin="0 0 10 0" mah:TextBoxHelper.Watermark="Роль"/>
-                <PasswordBox x:Name="NewPasswordBox" Width="200" Margin="0 0 10 0" mah:TextBoxHelper.Watermark="Пароль"/>
-                <Button Content="Добавить пользователя" Width="150" Click="AddUserButton_Click"/>
-            </StackPanel>
-        </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
