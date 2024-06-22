@@ -113,9 +113,7 @@ F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainP
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\UserMenu.baml
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\BilliardTimeTracker.sourcelink.json
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\Grid.png
-F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\DashboardPage.g.cs
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\BilliardTimeTracker_Content.g.cs
-F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\DashboardPage.baml
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\AboutPage.g.cs
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\AboutPage.baml
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\Information.png
@@ -127,7 +125,9 @@ F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\runti
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\ProfilePage.g.cs
-F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\ProfilePage.baml
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\Profile.png
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\Exit.png
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\UserPages\DashboardPage.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\UserPages\DashboardPage.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\UserPages\ProfilePage.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\UserPages\ProfilePage.baml

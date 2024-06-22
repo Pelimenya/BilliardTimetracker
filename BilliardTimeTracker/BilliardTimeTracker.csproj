@@ -42,4 +42,21 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="SecondaryPages\AdminPages\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="SecondaryPages\UserPages\DashboardPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="SecondaryPages\UserPages\ProfilePage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
 </Project>

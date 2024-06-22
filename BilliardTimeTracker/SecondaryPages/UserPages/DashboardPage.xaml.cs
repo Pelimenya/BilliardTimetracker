@@ -14,6 +14,7 @@ namespace BilliardTimeTracker.MainPages
         public DashboardPage()
         {
             InitializeComponent();
+            LoadData();
             StartTimer();
         }
 

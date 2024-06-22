@@ -23,12 +23,12 @@
                 <mah:HamburgerMenuItemCollection>
                     <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\Grid.png" Label="Панель управления">
                         <mah:HamburgerMenuItem.Tag>
-                            <Frame x:Name="SalesPlanPage" Source="../SecondaryPages/DashboardPage.xaml" NavigationUIVisibility="Hidden" />
+                            <Frame x:Name="SalesPlanPage" Source="../SecondaryPages/UserPages/DashboardPage.xaml" NavigationUIVisibility="Hidden" />
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuGlyphItem>
                     <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\Profile.png" Label="Изменить профиль">
                         <mah:HamburgerMenuItem.Tag>
-                            <Frame x:Name="ProfilePage" Source="../SecondaryPages/ProfilePage.xaml" NavigationUIVisibility="Hidden" />
+                            <Frame x:Name="ProfilePage" Source="../SecondaryPages/UserPages/ProfilePage.xaml" NavigationUIVisibility="Hidden" />
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuGlyphItem>
                     
