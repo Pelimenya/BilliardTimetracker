@@ -1,11 +1,13 @@
-﻿using BilliardTimeTracker.Models;
-using BilliardTimeTracker.Context;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using BilliardTimeTracker.Context;
+using BilliardTimeTracker.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BilliardTimeTracker.SecondaryPages.AdminPages
 {
@@ -40,25 +42,14 @@ namespace BilliardTimeTracker.SecondaryPages.AdminPages
             LoadUsers(SearchTextBox.Text);
         }
 
-        private void SaveUser_Click(object sender, RoutedEventArgs e)
+        private async void SaveUser_Click(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
-            User user = (User)button.DataContext;
-
+            
             try
             {
-                if (user.UserId == 0) // Проверка на 0 не требуется, так как UserId будет автоматически сгенерирован
-                {
-                    _context.Users.Add(user); // Добавление нового пользователя в контекст базы данных
-                }
-                else
-                {
-                    _context.Users.Update(user); // Обновление существующего пользователя
-                }
-
-                _context.SaveChanges(); // Сохранение изменений в базе данных
+                await _context.SaveChangesAsync();
                 MessageBox.Show("Пользователь успешно сохранен.");
-                LoadUsers(); // Обновить список пользователей после сохранения
+                LoadUsers(); 
             }
             catch (Exception ex)
             {
@@ -75,9 +66,9 @@ namespace BilliardTimeTracker.SecondaryPages.AdminPages
                 {
                     try
                     {
-                        _context.Users.Remove(selectedUser); // Удаление пользователя из контекста базы данных
-                        _context.SaveChanges(); // Сохранение изменений
-                        Users.Remove(selectedUser); // Удаление пользователя из коллекции
+                        _context.Users.Remove(selectedUser);
+                        _context.SaveChanges();
+                        Users.Remove(selectedUser);
                     }
                     catch (Exception ex)
                     {
@@ -89,17 +80,39 @@ namespace BilliardTimeTracker.SecondaryPages.AdminPages
 
         private void AddUserButton_Click(object sender, RoutedEventArgs e)
         {
-            // Создание нового объекта User без присвоения UserId
+            if (string.IsNullOrEmpty(NewUsernameTextBox.Text) ||
+                string.IsNullOrEmpty(NewFullNameTextBox.Text) ||
+                string.IsNullOrEmpty(NewRoleTextBox.Text) ||
+                string.IsNullOrEmpty(NewPasswordBox.Password))
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля.");
+                return;
+            }
+
+            using SHA256 sha256 = SHA256.Create();
+            byte[] hashedPasswordBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(NewPasswordBox.Password));
+            string hashedPassword = BitConverter.ToString(hashedPasswordBytes).Replace("-", "").ToLower();
+
             User newUser = new User
             {
-                Username = "Новый пользователь",
-                FullName = "Полное имя",
-                Role = "Роль"
+                Username = NewUsernameTextBox.Text,
+                FullName = NewFullNameTextBox.Text,
+                Role = NewRoleTextBox.Text,
+                PasswordHash = hashedPassword
             };
 
-            Users.Add(newUser); // Добавление в коллекцию для отображения в DataGrid
-            UsersDataGrid.SelectedItem = newUser;
-            UsersDataGrid.ScrollIntoView(newUser);
+            _context.Users.Add(newUser);
+            _context.SaveChanges();
+
+            LoadUsers();
+
+            // Очистка полей ввода
+            NewUsernameTextBox.Text = string.Empty;
+            NewFullNameTextBox.Text = string.Empty;
+            NewRoleTextBox.Text = string.Empty;
+            NewPasswordBox.Password = string.Empty;
+
+            MessageBox.Show("Новый пользователь добавлен.");
         }
     }
 }
