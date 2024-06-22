@@ -5,41 +5,58 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:BilliardTimeTracker.SecondaryPages.AdminPages"
       xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:sys="clr-namespace:System;assembly=System.Runtime"
       mc:Ignorable="d"
-      Title="ViewLogsPage" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+      Title="ViewLogsPage">
+    <Grid Background="{DynamicResource MahApps.Brushes.Accent2}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-      
-        <Border Grid.Row="0" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9">
-            <StackPanel>
-                <TextBlock Text="Статистика" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0 0 10 0"/>
-                <StackPanel Orientation="Vertical" Margin="0 0 10 0">
-                    <TextBlock x:Name="TotalSessionsTextBlock" FontSize="14" Foreground="White" Margin="0 0 5 0"/>
-                    <TextBlock x:Name="TotalRevenueTextBlock" FontSize="14" Foreground="White" Margin="0 0 5 0"/>
-                    <TextBlock x:Name="AverageDurationTextBlock" FontSize="14" Foreground="White" Margin="0 0 5 0"/>
-                </StackPanel>
+                    <Border Grid.Row="0" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9">
+                        <StackPanel>
+                            <TextBlock Text="Статистика" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0 0 10 0"/>
+                            <StackPanel Orientation="Vertical" Margin="0 0 10 0">
+                                <TextBlock x:Name="TotalSessionsTextBlock" FontSize="14" Foreground="White" Margin="0 0 5 0"/>
+                                <TextBlock x:Name="TotalRevenueTextBlock" FontSize="14" Foreground="White" Margin="0 0 5 0"/>
+                                <TextBlock x:Name="AverageDurationTextBlock" FontSize="14" Foreground="White" Margin="0 0 5 0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <DatePicker x:Name="DatePicker" Width="150" Margin="10"
+                                            SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                            mah:TextBoxHelper.Watermark="Выберите дату..."
+                                            DisplayDateEnd="{x:Static sys:DateTime.Today}"
+                                            Style="{StaticResource MahApps.Styles.DatePicker}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Row="1" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9">
+                        <StackPanel>
+                            <TextBlock Text="Сессии" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0 0 10 0"/>
+                            <DataGrid x:Name="SessionsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
+                                      HeadersVisibility="Column" GridLinesVisibility="None"
+                                      SelectionMode="Single" SelectionUnit="FullRow"
+                                      Background="Transparent"
+                                      Style="{StaticResource MahApps.Styles.DataGrid}"
+                                      Margin="0 10 0 10">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Стол" Binding="{Binding Table.TableName}" Width="*"/>
+                                    <DataGridTextColumn Header="Дата" Binding="{Binding StartTime, StringFormat=\{0:dd/MM/yyyy\}}" Width="auto"/>
+                                    <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime, StringFormat=\{0:HH:mm\}}" Width="auto"/>
+                                    <DataGridTextColumn Header="Время окончания" Binding="{Binding EndTime, StringFormat=\{0:HH:mm\}}" Width="auto"/>
+                                    <DataGridTextColumn Header="Пользователь" Binding="{Binding User.Username}" Width="*"/>
+                                    <DataGridTextColumn Header="Стоимость" Binding="{Binding Cost}" Width="auto"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
             </StackPanel>
-        </Border>
-
-      
-        <DataGrid x:Name="SessionsDataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
-                  HeadersVisibility="Column" GridLinesVisibility="None"
-                  SelectionMode="Single" SelectionUnit="FullRow"
-                  Background="Transparent"
-                  Style="{StaticResource MahApps.Styles.DataGrid}"
-                  Margin="10">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Стол" Binding="{Binding Table.TableName}" Width="*"/>
-                <DataGridTextColumn Header="Дата" Binding="{Binding StartTime, StringFormat=\{0:dd/MM/yyyy\}}" Width="auto"/>
-                <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime, StringFormat=\{0:HH:mm\}}" Width="auto"/>
-                <DataGridTextColumn Header="Время окончания" Binding="{Binding EndTime, StringFormat=\{0:HH:mm\}}" Width="auto"/>
-                <DataGridTextColumn Header="Пользователь" Binding="{Binding User.Username}" Width="*"/>
-                <DataGridTextColumn Header="Стоимость" Binding="{Binding Cost}" Width="auto"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        </ScrollViewer>
     </Grid>
 </Page>
