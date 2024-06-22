@@ -40,10 +40,18 @@
       <Content Include="Assets\Images\Exit.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="SecondaryPages\AdminPages\" />
+      <None Remove="Assets\Images\UserManagement.png" />
+      <Content Include="Assets\Images\UserManagement.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Images\ViewLogs.png" />
+      <Content Include="Assets\Images\ViewLogs.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Assets\Images\ManageContent.png" />
+      <Content Include="Assets\Images\ManageContent.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
@@ -53,6 +61,11 @@
         <SubType>Designer</SubType>
       </Page>
       <Page Update="SecondaryPages\UserPages\ProfilePage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="Assets\SplitMenuStyles.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>

@@ -33,8 +33,7 @@ public partial class LoginPage : Page
 
                 if (user.Role == "Admin")
                 {
-                    MessageBox.Show("Admin menu");
-                    // NavigationService.Navigate(new SelectUserInterface());
+                    NavigationService.Navigate(new AdminMenu());
                 }
                 else
                 {

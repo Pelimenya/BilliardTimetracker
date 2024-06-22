@@ -106,7 +106,6 @@ F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\Billi
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\BilliardTimeTracker.genruntimeconfig.cache
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\ref\BilliardTimeTracker.dll
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\App.baml
-F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\Assets\SplitMenuStyles.baml
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\LoginPage.g.cs
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\LoginPage.baml
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\UserMenu.g.cs
@@ -131,3 +130,15 @@ F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\Secon
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\UserPages\DashboardPage.baml
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\UserPages\ProfilePage.g.cs
 F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\UserPages\ProfilePage.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\AdminMenu.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\AdminPages\ManageContentPage.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\AdminPages\ManageUsersPage.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\AdminPages\ViewLogsPage.g.cs
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\MainPages\AdminMenu.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\AdminPages\ManageContentPage.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\AdminPages\ManageUsersPage.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\SecondaryPages\AdminPages\ViewLogsPage.baml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\UserManagement.png
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\ViewLogs.png
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\bin\Debug\net8.0-windows\Assets\Images\ManageContent.png
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\Assets\SplitMenuStyles.baml

@@ -1,9 +1,12 @@
 ﻿
 FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\App.xaml;;
 FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\MainPages\AboutPage.xaml;;
+FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\MainPages\AdminMenu.xaml;;
 FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\MainPages\LoginPage.xaml;;
 FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\MainPages\UserMenu.xaml;;
 FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\MainWindow.xaml;;
+FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\SecondaryPages\AdminPages\ManageContentPage.xaml;;
+FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\SecondaryPages\AdminPages\ViewLogsPage.xaml;;
 FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\SecondaryPages\UserPages\DashboardPage.xaml;;
 FF:\VSCode\BilliardTimeTracker\BilliardTimeTracker\SecondaryPages\UserPages\ProfilePage.xaml;;
 

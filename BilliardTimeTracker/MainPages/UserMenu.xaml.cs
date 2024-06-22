@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using BilliardTimeTracker.Models;
 using MahApps.Metro.Controls;
 
 namespace BilliardTimeTracker.MainPages;
