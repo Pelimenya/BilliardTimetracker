@@ -31,7 +31,7 @@
                             <Frame x:Name="ViewLogsPage" Source="../SecondaryPages/AdminPages/ViewLogsPage.xaml" NavigationUIVisibility="Hidden" />
                         </mah:HamburgerMenuItem.Tag>
                     </mah:HamburgerMenuGlyphItem>
-                    <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\ManageContent.png" Label="Управление контентом">
+                    <mah:HamburgerMenuGlyphItem Glyph="..\Assets\Images\ManageContent.png" Label="Бронирование столов">
                         <mah:HamburgerMenuItem.Tag>
                             <Frame x:Name="ManageContentPage" Source="../SecondaryPages/AdminPages/ManageContentPage.xaml" NavigationUIVisibility="Hidden" />
                         </mah:HamburgerMenuItem.Tag>
