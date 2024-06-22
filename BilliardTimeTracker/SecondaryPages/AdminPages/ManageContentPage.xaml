@@ -4,10 +4,73 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:BilliardTimeTracker.SecondaryPages.AdminPages"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
       mc:Ignorable="d"
-      Title="ManageContentPage" Height="450" Width="800">
-    <Grid>
-        <TextBlock Text="Управление контентом" FontSize="24" FontWeight="Bold" Margin="10"/>
-        <!-- Здесь можно добавить элементы управления для управления контентом -->
+      Title="ManageContentPage">
+    <Grid Background="{DynamicResource MahApps.Brushes.Accent2}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="4*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="3*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Column="0" Grid.Row="0" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9">
+                        <StackPanel>
+                            <TextBlock Text="Бронирование столов" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0 0 10 0"/>
+                            <StackPanel Orientation="Vertical" Margin="0 0 0 10">
+                                <ComboBox x:Name="TableComboBox" Width="200" Margin="0,20,10,10" DisplayMemberPath="TableName" SelectedValuePath="TableId"
+                                          SelectedIndex="-1" SelectedValue="{Binding SelectedTableId, Mode=TwoWay}" 
+                                          mah:TextBoxHelper.Watermark="Выберите стол..."
+                                          Style="{StaticResource MahApps.Styles.ComboBox}" />
+                                <TextBox x:Name="UserNameTextBox" Width="200" Margin="0 0 10 0"
+                                         mah:TextBoxHelper.Watermark="Введите имя пользователя"
+                                         Style="{StaticResource MahApps.Styles.TextBox}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="1" Grid.Row="0" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9">
+                        <StackPanel>
+                            <TextBlock Text="Выбор даты и времени" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0 0 10 0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,20" HorizontalAlignment="Center">
+                                <mah:TimePicker x:Name="StartTimePicker" Width="150" Height="30" Margin="0 0 10 0" mah:TextBoxHelper.Watermark="Время начала..."/>
+                                <mah:TimePicker x:Name="EndTimePicker" Width="150" Height="30" Margin="0 0 10 0"  mah:TextBoxHelper.Watermark="Время окончания..."/>
+                                <DatePicker x:Name="BookingDatePicker" Width="150" Height="30" Margin="0 0 10 0" 
+                                            mah:TextBoxHelper.Watermark="Выберите дату..."
+                                            Style="{StaticResource MahApps.Styles.DatePicker}" />
+                            </StackPanel>
+                            <Button Content="Забронировать" Width="150" Click="BookTable_Click" Margin="0 30 0 0"
+                                    Style="{StaticResource MahApps.Styles.Button}" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="{DynamicResource MahApps.Brushes.Accent}" CornerRadius="10" Padding="20" Margin="10" Opacity="0.9" HorizontalAlignment="Stretch">
+                        <StackPanel>
+                            <TextBlock Text="Забронированные столы" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0 0 10 0"/>
+                            <DataGrid x:Name="BookingsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True"
+                                      HeadersVisibility="Column" GridLinesVisibility="None"
+                                      SelectionMode="Single" SelectionUnit="FullRow"
+                                      Background="Transparent"
+                                      Style="{StaticResource MahApps.Styles.DataGrid}"
+                                      Margin="0 10 0 10">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Стол" Binding="{Binding Table.TableName}" Width="*"/>
+                                    <DataGridTextColumn Header="Дата" Binding="{Binding StartTime, StringFormat=\{0:dd/MM/yyyy\}}" Width="auto"/>
+                                    <DataGridTextColumn Header="Время начала" Binding="{Binding StartTime, StringFormat=\{0:HH:mm\}}" Width="auto"/>
+                                    <DataGridTextColumn Header="Время окончания" Binding="{Binding EndTime, StringFormat=\{0:HH:mm\}}" Width="auto"/>
+                                    <DataGridTextColumn Header="Пользователь" Binding="{Binding User.Username}" Width="*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

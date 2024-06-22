@@ -106,7 +106,7 @@ namespace BilliardTimeTracker.SecondaryPages.AdminPages
 
             LoadUsers();
 
-            // Очистка полей ввода
+          
             NewUsernameTextBox.Text = string.Empty;
             NewFullNameTextBox.Text = string.Empty;
             NewRoleTextBox.Text = string.Empty;

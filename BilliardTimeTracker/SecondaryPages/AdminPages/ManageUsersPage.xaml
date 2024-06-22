@@ -9,8 +9,6 @@
     <Grid Background="{DynamicResource MahApps.Brushes.Accent2}">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20">
-                <TextBlock Text="Управление пользователями" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0 0 20 0"/>
-                
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*" />
@@ -54,7 +52,7 @@
                                     <DataGridTextColumn Header="Имя пользователя" Binding="{Binding Username}"/>
                                     <DataGridTextColumn Header="Полное имя" Binding="{Binding FullName}"/>
                                     <DataGridTextColumn Header="Роль" Binding="{Binding Role}"/>
-                                    <DataGridTextColumn Header="Пароль" Binding="{Binding PasswordHash}" Visibility="Collapsed"/> <!-- Скрываем хэш пароля -->
+                                    <DataGridTextColumn Header="Пароль" Binding="{Binding PasswordHash}" Visibility="Collapsed"/> 
                                     <DataGridTemplateColumn Header="Действия">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate>
