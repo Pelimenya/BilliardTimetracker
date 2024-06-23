@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\XIAOMI\Desktop\Projects\BilliardTimetracker\BilliardTimeTracker\obj\Debug\net8.0-windows\
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\obj\Debug\net8.0-windows\
 BilliardTimeTracker
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\XIAOMI\Desktop\Projects\BilliardTimetracker\BilliardTimeTracker\App.xaml
+F:\VSCode\BilliardTimeTracker\BilliardTimeTracker\App.xaml
 11-428836139
 7372084250
 20772422458
-2191634506524
+219798695466
 Assets\SplitMenuStyles.xaml;MainPages\AboutPage.xaml;MainPages\AdminMenu.xaml;MainPages\LoginPage.xaml;MainPages\UserMenu.xaml;MainWindow.xaml;SecondaryPages\AdminPages\ManageContentPage.xaml;SecondaryPages\AdminPages\ManageUsersPage.xaml;SecondaryPages\AdminPages\ViewLogsPage.xaml;SecondaryPages\UserPages\DashboardPage.xaml;SecondaryPages\UserPages\ProfilePage.xaml;
 
 False

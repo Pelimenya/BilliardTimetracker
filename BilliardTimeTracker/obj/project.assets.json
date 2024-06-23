@@ -3452,25 +3452,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\XIAOMI\\.nuget\\packages\\": {}
+    "C:\\Users\\kostm\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\XIAOMI\\Desktop\\Projects\\BilliardTimetracker\\BilliardTimeTracker\\BilliardTimeTracker.csproj",
+      "projectUniqueName": "F:\\VSCode\\BilliardTimeTracker\\BilliardTimeTracker\\BilliardTimeTracker.csproj",
       "projectName": "BilliardTimeTracker",
-      "projectPath": "C:\\Users\\XIAOMI\\Desktop\\Projects\\BilliardTimetracker\\BilliardTimeTracker\\BilliardTimeTracker.csproj",
-      "packagesPath": "C:\\Users\\XIAOMI\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\XIAOMI\\Desktop\\Projects\\BilliardTimetracker\\BilliardTimeTracker\\obj\\",
+      "projectPath": "F:\\VSCode\\BilliardTimeTracker\\BilliardTimeTracker\\BilliardTimeTracker.csproj",
+      "packagesPath": "C:\\Users\\kostm\\.nuget\\packages\\",
+      "outputPath": "F:\\VSCode\\BilliardTimeTracker\\BilliardTimeTracker\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\XIAOMI\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\kostm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
-        "C:\\Users\\XIAOMI\\.dotnet\\library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3537,7 +3544,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\XIAOMI\\.dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

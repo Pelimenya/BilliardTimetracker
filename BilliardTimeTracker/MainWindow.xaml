@@ -6,7 +6,7 @@
                  xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                  xmlns:local="clr-namespace:BilliardTimeTracker"
                  mc:Ignorable="d"
-                 Title="MainWindow" Height="720" Width="1280"  MinWidth="800" MinHeight="470" WindowStartupLocation="CenterScreen">
+                 Title="Billiard time tracker" Height="720" Width="1280"  MinWidth="800" MinHeight="470" WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame x:Name="Framemain" NavigationUIVisibility="Hidden" Source=".\MainPages\LoginPage.xaml"></Frame>
     </Grid>
